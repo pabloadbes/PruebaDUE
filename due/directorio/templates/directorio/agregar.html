@@ -1,0 +1,18 @@
+{% extends 'directorio/base.html' %}
+
+
+{% block title %}Agregar{% endblock title %}
+
+{% block content %}
+    {% if 'ok' in request.GET %}
+        <p><b>Datos enviados</b></p>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar" />
+    </form>
+
+{% endblock content %}
